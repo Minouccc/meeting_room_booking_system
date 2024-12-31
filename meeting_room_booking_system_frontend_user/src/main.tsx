@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Register } from "./page/register";
 import { Login } from "./page/login";
-import { UpdatePassword } from "./page/UpdatePassword";
+import { UpdatePassword } from "./page/updatePassword";
 import { ErrorPage } from "./page/error";
 
 const routes = [
