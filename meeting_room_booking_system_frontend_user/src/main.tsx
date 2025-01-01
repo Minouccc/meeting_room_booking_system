@@ -6,6 +6,9 @@ import { UpdatePassword } from "./page/updatePassword";
 import { ErrorPage } from "./page/error";
 import { Index } from "./page/index";
 import { UpdateInfo } from "./page/updateInfo";
+import { Menu } from "./page/menu";
+import { MeetingRoomList } from "./page/meeting_room_list";
+import { BookingHistory } from "./page/booking_history";
 
 const routes = [
   {
@@ -16,6 +19,24 @@ const routes = [
       {
         path: "update_info",
         element: <UpdateInfo />,
+      },
+      {
+        path: "/",
+        element: <Menu />,
+        children: [
+          {
+            path: "/",
+            element: <MeetingRoomList />,
+          },
+          {
+            path: "meeting_room_list",
+            element: <MeetingRoomList />,
+          },
+          {
+            path: "booking_history",
+            element: <BookingHistory />,
+          },
+        ],
       },
     ],
   },
@@ -32,7 +53,7 @@ const routes = [
     element: <UpdatePassword />,
   },
 ];
-const router = createBrowserRouter(routes);
+export const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
