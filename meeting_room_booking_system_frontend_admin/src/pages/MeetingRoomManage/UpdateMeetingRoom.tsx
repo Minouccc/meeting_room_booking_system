@@ -18,6 +18,7 @@ const layout = {
 };
 
 export interface UpdateMeetingRoom {
+  id: number;
   name: string;
   capacity: number;
   location: string;
