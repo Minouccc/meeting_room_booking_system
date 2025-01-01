@@ -32,6 +32,7 @@ export class MeetingRoomController {
     @Query('name') name: string,
     @Query('capacity') capacity: number,
     @Query('equipment') equipment: string,
+    @Query('location') location: string,
   ) {
     return await this.meetingRoomService.find(
       pageNo,
@@ -39,6 +40,7 @@ export class MeetingRoomController {
       name,
       capacity,
       equipment,
+      location,
     );
   }
 

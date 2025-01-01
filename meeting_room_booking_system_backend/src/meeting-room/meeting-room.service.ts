@@ -41,6 +41,7 @@ export class MeetingRoomService {
     name: string,
     capacity: number,
     equipment: string,
+    location: string,
   ) {
     if (pageNo < 1) {
       throw new BadRequestException('页码最小为 1');
@@ -57,6 +58,9 @@ export class MeetingRoomService {
     }
     if (capacity) {
       condition.capacity = capacity;
+    }
+    if (location) {
+      condition.location = Like(`%${location}%`);
     }
 
     const [meetingRooms, totalCount] = await this.repository.findAndCount({
