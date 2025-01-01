@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
@@ -59,11 +60,11 @@ import { StatisticModule } from './statistic/statistic.module';
     EmailModule,
     MeetingRoomModule,
     BookingModule,
+    StatisticModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: 'src/.env',
+      envFilePath: path.join(__dirname, '.env'),
     }),
-    StatisticModule,
   ],
   controllers: [AppController],
   providers: [
