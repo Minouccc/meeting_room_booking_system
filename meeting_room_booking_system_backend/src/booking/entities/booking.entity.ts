@@ -5,12 +5,15 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  JoinTable,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity()
+@Entity({
+  name: 'bookings',
+})
 export class Booking {
   @PrimaryGeneratedColumn()
   id: number;
@@ -40,9 +43,15 @@ export class Booking {
   note: string;
 
   @ManyToOne(() => User)
+  @JoinTable({
+    name: 'user_bookings',
+  })
   user: User;
 
   @ManyToOne(() => MeetingRoom)
+  @JoinTable({
+    name: 'meeting_room_bookings',
+  })
   room: MeetingRoom;
 
   @CreateDateColumn({

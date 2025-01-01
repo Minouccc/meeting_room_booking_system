@@ -56,12 +56,12 @@ import { Booking } from './booking/entities/booking.entity';
     UserModule,
     RedisModule,
     EmailModule,
+    MeetingRoomModule,
+    BookingModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: 'src/.env',
     }),
-    MeetingRoomModule,
-    BookingModule,
   ],
   controllers: [AppController],
   providers: [

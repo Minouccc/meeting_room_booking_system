@@ -26,7 +26,7 @@ interface SearchMeetingRoom {
   location: string;
 }
 
-interface MeetingRoomSearchResult {
+export interface MeetingRoomSearchResult {
   id: number;
   name: string;
   capacity: number;
